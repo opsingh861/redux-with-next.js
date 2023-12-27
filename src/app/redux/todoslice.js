@@ -1,4 +1,4 @@
-const { createSlice } = require("@reduxjs/toolkit");
+const { createSlice, nanoid } = require("@reduxjs/toolkit");
 
 const initialState = {
     todos: []
@@ -9,8 +9,8 @@ const Slice = createSlice({
     reducers: {
         addTodo: (state, action) => {
             const data = {
-                id: action.payload.id,
-                title: action.payload.title,
+                id: nanoid(),
+                title: action.payload,
                 completed: false
             }
             state.todos.push(data);
