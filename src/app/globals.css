@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-.add-user{
+.add-user {
     /* margin */
     margin: 10px 20px;
     border: 1px solid #a50f0f;
@@ -15,17 +15,16 @@
     width: 85%;
 }
 
-.input-box{
+.input-box {
     display: block;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #a50f0f;
     border-radius: 5px;
-    
+
 }
 
-.btn
-{
+.btn {
     padding: 10px;
     border: 1px solid #a50f0f;
     border-radius: 5px;
@@ -34,17 +33,27 @@
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #fff;
     color: #a50f0f;
 }
 
-.display-user{
+.display-user {
     /* margin */
     margin: 10px 20px;
     border: 1px solid #a50f0f;
     padding: 20px;
     border-radius: 5px;
-    height: 200px;
+    /* min height */
+    min-height: 200px;
     width: 85%;
+}
+
+.user {
+    background-color: aqua;
+    padding: 10px;
+    border: 1px solid #373636;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 40%;
 }
