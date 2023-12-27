@@ -44,16 +44,19 @@
     border: 1px solid #a50f0f;
     padding: 20px;
     border-radius: 5px;
-    /* min height */
-    min-height: 200px;
+    height: 200px;
     width: 85%;
+    overflow: scroll;
 }
 
 .user {
+    display: flex;
     background-color: aqua;
     padding: 10px;
     border: 1px solid #373636;
     border-radius: 5px;
     margin: 10px 0;
     width: 40%;
+    justify-content: space-between;
+    align-items: center;
 }
