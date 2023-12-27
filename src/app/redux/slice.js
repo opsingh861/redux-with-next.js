@@ -1,8 +1,18 @@
-const { createSlice, nanoid, current } = require("@reduxjs/toolkit");
+
+
+const { createSlice, nanoid, current, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const initialState = {
-    users:localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
+    apiUser: [],
+    users: localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : []
 };
+
+export const fetchApiUser = createAsyncThunk("fetchApiUser", async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    return data;
+});
+
 
 const Slice = createSlice({
     name: "addUserSlice",
@@ -30,6 +40,11 @@ const Slice = createSlice({
             localStorage.setItem('users', newData);
 
         }
+    },
+    extraReducers :(builder) => {
+        builder.addCase(fetchApiUser.fulfilled, (state, action) => {
+            state.apiUser = action.payload;
+        });
     }
 });
 

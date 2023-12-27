@@ -1,6 +1,8 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
-const initialState = []
+const initialState = {
+    todos: []
+}
 const Slice = createSlice({
     name: "todoSlice",
     initialState,
@@ -11,7 +13,7 @@ const Slice = createSlice({
                 title: action.payload.title,
                 completed: false
             }
-            state.push(data);
+            state.todos.push(data);
         }
     }
 });
