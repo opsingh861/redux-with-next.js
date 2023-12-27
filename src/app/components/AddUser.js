@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/slice";
+import Link from "next/link";
 
 
 export default function AddUser() {
-    const [name,setName] = useState('');
+    const [name, setName] = useState('');
     const dispatch = useDispatch();
     const userDispatcher = () => {
         dispatch(addUser(name))
@@ -15,8 +16,10 @@ export default function AddUser() {
     return (
         <div className="add-user">
             <h1>Add User</h1>
-            <input onChange={(e)=>setName(e.target.value)} className="input-box" type="text" placeholder="Enter Name" />
+            <input onChange={(e) => setName(e.target.value)} className="input-box" type="text" placeholder="Enter Name" />
             <button onClick={userDispatcher} className="btn">Add</button>
+            <br />
+            <Link href="/removeuser"> Remove User</Link>
         </div>
     )
 }
